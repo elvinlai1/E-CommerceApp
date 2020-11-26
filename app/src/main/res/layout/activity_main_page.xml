@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <LinearLayout
+        android:layout_width="448dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="10sp"
+        android:layout_marginEnd="10sp"
+        android:layout_marginBottom="10sp"
+        android:orientation="horizontal"
+        android:padding="10sp">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="422dp"
+            android:layout_height="match_parent"
+            android:hint="Search"
+            android:inputType="text"
+            android:layout_gravity="center_horizontal">
+
+        </EditText>
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="476dp"
+        android:layout_height="222dp"
+        android:background="#F1ECE2"
+        android:orientation="horizontal"
+        android:layout_marginTop="90dp">
+
+
+        <ImageView
+            android:layout_width="183dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/Model">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Find the fit this season"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="197dp"
+        android:layout_height="157dp"
+        android:layout_below="@id/heading1"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="158dp"
+        android:lineSpacingExtra="5dp"
+        android:text="Launched in 2020, ABCShop is owned, branded, and brought to you by the editors of INFO INFO 3245: Mobile Programming (S10). Get a head start on your holiday shopping from select styles"
+        android:textSize="11sp"
+        tools:ignore="NotSibling" />
+
+    <TextView
+        android:layout_width="455dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="320dp"
+        android:text="Popular items"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+
+
+
+        />
+
+
+
+</RelativeLayout>
