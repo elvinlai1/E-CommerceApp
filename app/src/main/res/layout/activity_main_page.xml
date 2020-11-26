@@ -67,7 +67,7 @@
         android:layout_below="@id/heading1"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="200dp"
-        android:layout_marginTop="158dp"
+        android:layout_marginTop="128dp"
         android:lineSpacingExtra="5dp"
         android:text="Launched in 2020, ABCShop is owned, branded, and brought to you by the editors of INFO INFO 3245: Mobile Programming (S10). Get a head start on your holiday shopping from select styles"
         android:textSize="11sp"
