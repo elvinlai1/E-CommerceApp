@@ -12,3 +12,5 @@ public class MainPage extends AppCompatActivity {
         setContentView(R.layout.activity_main_page);
     }
 }
+
+
