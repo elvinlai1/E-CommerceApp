@@ -12,3 +12,4 @@ public class ShoppingCart extends AppCompatActivity {
         setContentView(R.layout.activity_shopping_cart);
     }
 }
+// hello :D
