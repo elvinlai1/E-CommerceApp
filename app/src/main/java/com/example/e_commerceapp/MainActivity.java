@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
         buttonStripped.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainPageStrippedShirt.class);
-                intent.putExtra("shirt3", R.drawable.shirtmale1);
-                startActivity(intent);
+                Intent intent1 = new Intent(MainActivity.this, MainPageStrippedShirt.class);
+                intent1.putExtra("shirt3", R.drawable.shirtmale1);
+                startActivity(intent1);
             }
 
 
