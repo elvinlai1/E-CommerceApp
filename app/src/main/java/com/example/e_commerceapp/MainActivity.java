@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button buttonBlack;
     Button buttonStripped;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        /**
+         * Broken pls fix
+         *
         buttonStripped = findViewById(R.id.strippedShirtBtn);
         buttonStripped.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+         **/
     }}
 
 
