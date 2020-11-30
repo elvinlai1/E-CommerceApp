@@ -44,7 +44,7 @@
         <ImageView
             android:layout_width="183dp"
             android:layout_height="match_parent"
-            android:src="@drawable/Model">
+            android:src="@drawable/mainmodel">
 
         </ImageView>
 
@@ -116,14 +116,16 @@
         <ImageButton
             android:layout_width="195dp"
             android:layout_height="136dp"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            android:id="@+id/blackShirtBtn">
 
         </ImageButton>
 
         <ImageButton
             android:layout_width="195dp"
             android:layout_height="133dp"
-            android:visibility="invisible">
+            android:visibility="invisible"
+            android:id="@+id/strippedShirtBtn">
 
         </ImageButton>
     </LinearLayout>
