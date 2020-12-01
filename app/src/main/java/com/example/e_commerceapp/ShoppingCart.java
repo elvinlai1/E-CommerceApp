@@ -5,8 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 
 /** 1. Get Shared Preferences for:
@@ -19,14 +22,18 @@ import android.os.Bundle;
  **/
 
 public class ShoppingCart extends AppCompatActivity {
-/**
+
     //Dummy Data
     int amt;
     double totalCost;
+    Button checkout;
+    Button home;
 
     RecyclerView cartRV;
-    cartAdapter myAdapter;
+    //cartAdapter myAdapter;
     SharedPreferences preferences;
+
+
 
 
     @Override
@@ -34,18 +41,36 @@ public class ShoppingCart extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
 
-        cartRecyclerView = findViewById(R.id.recyclerView);
 
-        preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
+        home = findViewById(R.id.cart_Home);
+        checkout = findViewById(R.id.cart_Proceed);
 
-        cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(ShoppingCart.this, Checkout.class));
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                startActivity(new Intent(ShoppingCart.this, MainActivity.class));
+            }
+        });
+
+        //cartRecyclerView = findViewById(R.id.recyclerView);
+
+        //preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
+
+        //cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         //getMyList();
 
 
 
     }
-**/
+
 
 
 

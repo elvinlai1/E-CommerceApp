@@ -49,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.menu_pants:
                         startActivity(new Intent(MainActivity.this, pantsPanelActivity.class));
+                        break;
+                    case R.id.menu_cart:
+                        startActivity(new Intent(MainActivity.this, ShoppingCart.class));
+                        break;
+
 
                 }
                 return true;
