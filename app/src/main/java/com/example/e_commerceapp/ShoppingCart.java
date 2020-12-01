@@ -43,8 +43,6 @@ public class ShoppingCart extends AppCompatActivity {
         //getMyList();
 
 
-        cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
     }
 
 
