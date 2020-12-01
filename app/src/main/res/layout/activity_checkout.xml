@@ -144,13 +144,13 @@
             android:text="Shipping Options" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radBtn_regShip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="$9.99 Regular Shipping (7-14 Business Days)" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radBtn_expShip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="$19.99 Express Shipping (3-5 Business Days)" />

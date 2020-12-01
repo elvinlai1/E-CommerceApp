@@ -2,13 +2,17 @@ package com.example.e_commerceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 
-//import com.google.firebase.database.DatabaseReference;
-//import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import com.google.firebase.database.DatabaseReference;
 
 import java.util.UUID;
 
@@ -43,11 +47,11 @@ import java.util.UUID;
 public class Checkout extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
+    DatabaseReference myRef;
 
     Button btnOrder;
 
     EditText fn, ln, em, pn, pc, prov;
-
     boolean RegShip = true;
 
     @Override
@@ -55,6 +59,7 @@ public class Checkout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
+        //Shipping Details
         fn = findViewById(R.id.checkout_fn);
         ln = findViewById(R.id.checkout_ln);
         em = findViewById(R.id.checkout_email);
@@ -62,7 +67,11 @@ public class Checkout extends AppCompatActivity {
         pc = findViewById(R.id.checkout_pc);
         prov = findViewById(R.id.checkout_province);
 
+        //Shipping Options
+        final RadioButton expressShipping = (RadioButton) findViewById(R.id.radBtn_expShip);
+        final RadioButton regularShipping = (RadioButton) findViewById(R.id.radBtn_regShip);
 
+        //Place Order Btn
         btnOrder = findViewById(R.id.btn_placeOrder);
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,57 +84,29 @@ public class Checkout extends AppCompatActivity {
                 String postalCode = pc.getText().toString().trim();
                 String province = prov.getText().toString().trim();
 
+
+
+
+
                 rootNode = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = rootNode.getReference("Transactions");
 
                 Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province);
 
-                myRef.child(getImageUUID()).setValue(transaction);
+                //Works
+                //myRef.child(getImageUUID()).setValue(transaction);
+
+                startActivity(new Intent(Checkout.this, Confirmation.class));
+
+
             }
         });
     }
 
-    //Generate Unique ID
+    //Generates Unique ID for transaction
     public static String getImageUUID() {
         return UUID.randomUUID().toString();
     }
 
-    
 
-
-    /**
-     *
-     * private void onStarClicked(DatabaseReference postRef) {
-     *     postRef.runTransaction(new Transaction.Handler() {
-     *         @Override
-     *         public Transaction.Result doTransaction(MutableData mutableData) {
-     *             Post p = mutableData.getValue(Post.class);
-     *             if (p == null) {
-     *                 return Transaction.success(mutableData);
-     *             }
-     *
-     *             if (p.stars.containsKey(getUid())) {
-     *                 // Unstar the post and remove self from stars
-     *                 p.starCount = p.starCount - 1;
-     *                 p.stars.remove(getUid());
-     *             } else {
-     *                 // Star the post and add self to stars
-     *                 p.starCount = p.starCount + 1;
-     *                 p.stars.put(getUid(), true);
-     *             }
-     *
-     *             // Set value and report transaction success
-     *             mutableData.setValue(p);
-     *             return Transaction.success(mutableData);
-     *         }
-     *
-     *         @Override
-     *         public void onComplete(DatabaseError databaseError, boolean committed,
-     *                                DataSnapshot currentData) {
-     *             // Transaction completed
-     *             Log.d(TAG, "postTransaction:onComplete:" + databaseError);
-     *         }
-     *     });
-     * }
-     */
 }
