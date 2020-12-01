@@ -9,12 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ECommerceApp">
-        <activity android:name=".pantsPanelActivity"></activity>
-        <activity
-            android:name=".PurchasingShirts"
+        <activity android:name=".PurchasingShirts"
+            android:parentActivityName=".shirtPanelActivity"
             android:label="Details"
-            android:parentActivityName=".shirtPanelActivity" />
-        <activity android:name=".shirtPanelActivity" />
+           />
+        <activity android:name=".shirtPanelActivity"></activity>
         <activity android:name=".MainPageStrippedShirt" />
         <activity android:name=".MainPageBlackShirt" />
         <activity android:name=".Confirmation" />

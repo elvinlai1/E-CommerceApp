@@ -46,22 +46,6 @@
         <item>Ideal for warmer weathers</item>
     </string-array>
 
-    <string-array name="list_pants">
-        <item>Jeans</item>
-        <item>Khakis</item>
-        <item>Trainers</item>
-        <item>Shorts</item>
-        <item>Cargo</item>
-    </string-array>
-
-    <string-array name="list_pants_description">
-        <item>High quality denim</item>
-        <item>Perfect for formal events</item>
-        <item>Perfect staying fit</item>
-        <item>Ideal for warmer weathers</item>
-        <item>High durability and plenty of storage</item>
-    </string-array>
-
 
 </resources>
 
