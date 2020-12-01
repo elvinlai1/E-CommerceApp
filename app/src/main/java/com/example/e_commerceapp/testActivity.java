@@ -40,35 +40,35 @@ public class testActivity extends AppCompatActivity {
 
         Model m = new Model();
         m.setTitle("Crewneck");
-        m.setPrice((int) 9.99);
+        m.setPrice("9.99");
         m.setDescription("Ideal for colder weathers");
         m.setImg(R.drawable.crew);
         models.add(m);
 
         m = new Model();
         m.setTitle("Pullover");
-        m.setPrice((int) 12.99);
+        m.setPrice("12.99");
         m.setDescription("Ideal for colder weathers");
         m.setImg(R.drawable.hoodie);
         models.add(m);
 
         m = new Model();
         m.setTitle("Jacket");
-        m.setPrice((int) 29.99);
+        m.setPrice("29.99");
         m.setDescription("Ideal for cold weathers");
         m.setImg(R.drawable.jackets);
         models.add(m);
 
         m = new Model();
         m.setTitle("Tshirts");
-        m.setPrice((int) 4.99);
+        m.setPrice("4.99");
         m.setDescription("Ideal for warmer weathers");
         m.setImg(R.drawable.tshirt );
         models.add(m);
 
         m = new Model();
         m.setTitle("Long Sleeve");
-        m.setPrice((int) 8.99);
+        m.setPrice("8.99");
         m.setDescription("Ideal for warmer weathers");
         m.setImg(R.drawable.longsleeveshirt);
         models.add(m);

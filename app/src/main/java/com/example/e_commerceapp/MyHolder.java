@@ -12,6 +12,7 @@ public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickLis
     ImageView mImaeView;
     TextView  mTitle, mDes;
     ItemClickListener itemClickListener;
+    TextView price;
 
 
     MyHolder(@NonNull View itemView) {
@@ -20,6 +21,7 @@ public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickLis
         this.mImaeView = itemView.findViewById(R.id.imageview);
         this.mTitle = itemView.findViewById(R.id.titleTv);
         this.mDes = itemView.findViewById(R.id.descriptionTV);
+        this.price = itemView.findViewById(R.id.priceTV);
         itemView.setOnClickListener(this);
     }
 

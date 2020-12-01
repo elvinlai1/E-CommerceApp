@@ -44,6 +44,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
         holder.mTitle.setText(models.get(position).getTitle()); // position
         holder.mDes.setText(models.get(position).getDescription());
         holder.mImaeView.setImageResource(  models.get(position).getImg());
+        holder.price.setText(models.get(position).getPrice());
         // resource folder which is drawable
 
 
@@ -53,6 +54,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
             public void onItemClickListener(View v, int position) {
                 String gTitle = models.get(position).getTitle();
                 String gDesc = models.get(position).getDescription();
+                String price = models.get(position).getPrice();
                 BitmapDrawable bitmapDrawable = (BitmapDrawable)holder.mImaeView.getDrawable();
 
                 Bitmap bitmap = bitmapDrawable.getBitmap();
@@ -64,6 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
                 intent.putExtra("iTitle", gTitle);
                 intent.putExtra("iDesc", gDesc);
                 intent.putExtra("iImage", bytes);
+                intent.putExtra("price", price);
                 c.startActivity(intent);
 
 

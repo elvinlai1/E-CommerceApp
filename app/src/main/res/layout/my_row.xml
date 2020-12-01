@@ -29,6 +29,7 @@
             android:layout_toEndOf="@id/imageview"
             android:layout_toRightOf="@id/imageview"
             android:text="Title"
+
             android:textColor="#F117D4"
             android:textSize="22sp"
             android:textStyle="bold" />
@@ -40,6 +41,7 @@
             android:id="@+id/priceTV"
             android:textSize="18sp"
             android:textColor="#5D605F"
+            android:textStyle="bold"
             android:layout_toRightOf="@id/titleTv"
             android:layout_toEndOf="@id/titleTv"
             android:layout_marginLeft="10dp"

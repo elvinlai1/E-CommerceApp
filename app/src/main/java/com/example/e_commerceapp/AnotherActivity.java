@@ -17,11 +17,12 @@ import java.util.ArrayList;
 
 public class AnotherActivity extends AppCompatActivity {
 
-    TextView mTitletv,mDescTv;
+    TextView mTitletv,mDescTv,priceOfClothes;
     ImageView mImagetv;
     int quantity;
     String clothingSize;
-    double priceOfClothes;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,20 +30,22 @@ public class AnotherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_purchasing_shirts);
         final EditText id = (EditText) findViewById(R.id.quantityOfItem);
         final EditText sizeID = (EditText) findViewById(R.id.sizeOfClothes);
-        final TextView price = (TextView) findViewById(R.id.priceofitem);
+        final TextView p = (TextView) findViewById(R.id.priceTV);
+
         Button button = (Button) findViewById(R.id.addToCart);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clothingSize = sizeID.getText().toString();
                 quantity = Integer.parseInt(id.getText().toString());
-               // double price  = Double.parseDouble(data1.getString("price");
+                //priceOfClothes = p.getText().toString();
+
 
                 Bundle shirtData = new Bundle();
 
                 shirtData.putString("itemName", String.valueOf(mTitletv));
                 shirtData.putString("size",clothingSize);
                 shirtData.putInt("quantity",quantity);
-                shirtData.putDouble("price", priceOfClothes);
+               // shirtData.putString("price",priceOfClothes);
                // Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
                // passdata.putExtra("infoAboutShirts", data);
                 //  startActivity(passdata);
@@ -62,12 +65,15 @@ public class AnotherActivity extends AppCompatActivity {
         mTitletv = findViewById(R.id.title);
         mDescTv  = findViewById(R.id.description);
         mImagetv  = findViewById(R.id.imageView);
+        priceOfClothes = findViewById(R.id.priceTV);
+
 
         // now get our data from intent in which we put our data
 
         Intent intent = getIntent();
         String mTitle = intent.getStringExtra("iTitle");
         String mDescription = intent.getStringExtra("iDesc");
+        String price = intent.getStringExtra("price");
 
         byte [] mBytes = getIntent().getByteArrayExtra("iImage");
 
@@ -81,5 +87,6 @@ public class AnotherActivity extends AppCompatActivity {
         mTitletv.setText(mTitle);
         mDescTv.setText(mDescription);
         mImagetv.setImageBitmap(bitmap);
+
     }
 }
