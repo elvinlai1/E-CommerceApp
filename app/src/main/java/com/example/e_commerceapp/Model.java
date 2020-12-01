@@ -6,7 +6,7 @@ public class Model {
 
     private String title,description;
     private int img;
-    String price;
+    private String price;
 
     public String getTitle() {
         return title;
@@ -36,7 +36,7 @@ public class Model {
         return price;
     }
 
-    public void setPrice(String title) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

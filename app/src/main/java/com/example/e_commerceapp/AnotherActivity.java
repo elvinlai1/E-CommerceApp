@@ -17,10 +17,11 @@ import java.util.ArrayList;
 
 public class AnotherActivity extends AppCompatActivity {
 
-    TextView mTitletv,mDescTv,priceOfClothes;
+    TextView mTitletv,mDescTv,mPriceTv;
     ImageView mImagetv;
     int quantity;
     String clothingSize;
+    String priceOfClothes;
 
 
 
@@ -37,7 +38,7 @@ public class AnotherActivity extends AppCompatActivity {
             public void onClick(View v) {
                 clothingSize = sizeID.getText().toString();
                 quantity = Integer.parseInt(id.getText().toString());
-                //priceOfClothes = p.getText().toString();
+                priceOfClothes = p.getText().toString();
 
 
                 Bundle shirtData = new Bundle();
@@ -45,7 +46,7 @@ public class AnotherActivity extends AppCompatActivity {
                 shirtData.putString("itemName", String.valueOf(mTitletv));
                 shirtData.putString("size",clothingSize);
                 shirtData.putInt("quantity",quantity);
-               // shirtData.putString("price",priceOfClothes);
+                shirtData.putString("price",priceOfClothes);
                // Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
                // passdata.putExtra("infoAboutShirts", data);
                 //  startActivity(passdata);
@@ -65,7 +66,7 @@ public class AnotherActivity extends AppCompatActivity {
         mTitletv = findViewById(R.id.title);
         mDescTv  = findViewById(R.id.description);
         mImagetv  = findViewById(R.id.imageView);
-        priceOfClothes = findViewById(R.id.priceTV);
+        mPriceTv = findViewById(R.id.priceTV);
 
 
         // now get our data from intent in which we put our data
@@ -73,7 +74,7 @@ public class AnotherActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String mTitle = intent.getStringExtra("iTitle");
         String mDescription = intent.getStringExtra("iDesc");
-        String price = intent.getStringExtra("price");
+        String mPrice = intent.getStringExtra("price");
 
         byte [] mBytes = getIntent().getByteArrayExtra("iImage");
 
@@ -86,6 +87,7 @@ public class AnotherActivity extends AppCompatActivity {
         //now set our data in our view, which we get in our previous activity
         mTitletv.setText(mTitle);
         mDescTv.setText(mDescription);
+        mPriceTv.setText(mPrice);
         mImagetv.setImageBitmap(bitmap);
 
     }
