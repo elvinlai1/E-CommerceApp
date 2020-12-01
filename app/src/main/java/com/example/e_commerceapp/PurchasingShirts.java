@@ -3,6 +3,9 @@ package com.example.e_commerceapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -13,8 +16,17 @@ public class PurchasingShirts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchasing_shirts);
         mainImageView = findViewById(R.id.shirt2);
+        final EditText size = (EditText) findViewById(R.id.sizeOfClothes);
+        final EditText quantity = (EditText) findViewById(R.id.quantityOfItem);
         getData();
         setData();
+        Button chkout = (Button) findViewById(R.id.addToCart);
+        chkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     private void getData(){

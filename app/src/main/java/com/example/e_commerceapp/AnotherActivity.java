@@ -29,31 +29,31 @@ public class AnotherActivity extends AppCompatActivity {
         setContentView(R.layout.activity_purchasing_shirts);
         final EditText id = (EditText) findViewById(R.id.quantityOfItem);
         final EditText sizeID = (EditText) findViewById(R.id.sizeOfClothes);
+        final TextView price = (TextView) findViewById(R.id.priceofitem);
         Button button = (Button) findViewById(R.id.addToCart);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 clothingSize = sizeID.getText().toString();
                 quantity = Integer.parseInt(id.getText().toString());
-              //  double price  = Double.parseDouble(data1.getString("price");
+               // double price  = Double.parseDouble(data1.getString("price");
 
-              //  Bundle data = new Bundle();
+                Bundle data = new Bundle();
 
-              //  data.putDouble( "price", priceOfClothes);
-             //   data.putString("itemName", String.valueOf(mTitletv));
-             //   data.putString("size",clothingSize);
-             // data.putInt("quantity",quantity);
-              //  Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
-              //  passdata.putExtra("infoAboutShirts", data);
+                data.putString("itemName", String.valueOf(mTitletv));
+                data.putString("size",clothingSize);
+              data.putInt("quantity",quantity);
+              data.putDouble("price", priceOfClothes);
+               // Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+               // passdata.putExtra("infoAboutShirts", data);
+                //  startActivity(passdata);
 
-              //  startActivity(passdata);
-
-                Intent getdata = getIntent();
+                //Intent getdata = getIntent();
                 //Unbundle the Data
-                Bundle data = getdata.getBundleExtra("infoAboutShirts");
+                //Bundle data = getdata.getBundleExtra("infoAboutShirts");
 
                 //Get individual Elements using the key
-              //  int id = data.getInt("quantity");
-               // output.setText(id);*/
+               // int id = data.getInt("quantity");
+            //    output.setText(id);
             }
         });
 
