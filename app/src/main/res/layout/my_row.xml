@@ -6,6 +6,7 @@
     app:cardCornerRadius="3dp"
     app:cardUseCompatPadding="true"
     app:cardElevation="3dp"
+    android:id="@+id/mainLayout"
     >
     <RelativeLayout
         android:layout_width="match_parent"
