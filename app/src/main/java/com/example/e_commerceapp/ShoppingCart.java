@@ -1,6 +1,6 @@
-package com.example.e_commerceapp;
+//package com.example.e_commerceapp;
 
-import androidx.appcompat.app.AppCompatActivity;
+//import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,7 +18,7 @@ import android.os.Bundle;
  *  Button "Proceed to Checkout"
  **/
 
-public class ShoppingCart extends AppCompatActivity {
+//public class ShoppingCart extends AppCompatActivity {
 /**
     //Dummy Data
     int amt;
@@ -44,9 +44,9 @@ public class ShoppingCart extends AppCompatActivity {
 
 **/
 
-    }
+  //  }
 
 
 
 
-}
+//}

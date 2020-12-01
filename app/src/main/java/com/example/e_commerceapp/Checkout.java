@@ -1,4 +1,4 @@
-package com.example.e_commerceapp;
+//package com.example.e_commerceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -36,22 +36,22 @@ import com.google.firebase.database.FirebaseDatabase;
  *
 **/
 
-public class Checkout extends AppCompatActivity {
+//public class Checkout extends AppCompatActivity {
 
-    FirebaseDatabase rootNode;
-    DatabaseReference myRef;
+  //  FirebaseDatabase rootNode;
+  //  DatabaseReference myRef;
 
-    Button btnOrder;
+ //   Button btnOrder;
 
-    String fn, ln, address, postalcode, province,
+ //   String fn, ln, address, postalcode, province,
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkout);
+ //   @Override
+ //   protected void onCreate(Bundle savedInstanceState) {
+ //       super.onCreate(savedInstanceState);
+   //     setContentView(R.layout.activity_checkout);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Transactions");
+    //    FirebaseDatabase database = FirebaseDatabase.getInstance();
+   //     DatabaseReference myRef = database.getReference("Transactions");
 
 /**
         String firstname = fn.getText().toString().trim();
@@ -73,7 +73,7 @@ public class Checkout extends AppCompatActivity {
 
  **/
 
-    }
+ //   }
 
     
 
@@ -113,4 +113,4 @@ public class Checkout extends AppCompatActivity {
      *     });
      * }
      */
-}
+//}

@@ -18,7 +18,7 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class shirtPanelActivity extends AppCompatActivity {
+public class testActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     MyAdapter   myAdapter;
@@ -28,9 +28,12 @@ public class shirtPanelActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shirt_panel);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.recyclerView);
         preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
         getMyList();
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setAdapter(myAdapter);
+
     }
 
     private void getMyList (){
@@ -79,10 +82,9 @@ public class shirtPanelActivity extends AppCompatActivity {
         else if (mSortSetting.equals("descending")){
             Collections.sort(models, Model.By_TITLE_DESCENDING);
         }
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myAdapter = new MyAdapter (this, models);
-        recyclerView.setAdapter(myAdapter);
+      //  recyclerView.setAdapter(myAdapter);
 
     }
     //create an interface class

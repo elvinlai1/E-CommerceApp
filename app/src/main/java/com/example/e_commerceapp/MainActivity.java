@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
     Button buttonStripped;
 
    // @SuppressLint("WrongViewCast")
-   // @Override
-   /* protected void onCreate(Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
@@ -36,23 +36,20 @@ public class MainActivity extends AppCompatActivity {
         nav = findViewById(R.id.navmenu);
         drawerLay = findViewById(R.id.drawer);
 
-        toggle = new ActionBarDrawerToggle(this, drawerLay, toolbar, R.string.open, R.string.close);
+        toggle = new ActionBarDrawerToggle(this,drawerLay,toolbar,R.string.open,R.string.close);
         drawerLay.addDrawerListener(toggle);
         toggle.syncState();
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch(menuItem.getItemId()) {
-                    case R.id.home1:
-                        Toast.makeText(MainActivity.this,"Home Page",Toast.LENGTH_SHORT).show();
+                switch (menuItem.getItemId()){
+                    case R.id.menu_shirts:
+                        startActivity(new Intent(MainActivity.this,testActivity.class));
                 }
-
                 return true;
-
-
             }
+        });
 
-        });*/
         {
 
             buttonBlack = findViewById(R.id.blackshirtbtn);
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
             });
         }
-    }
+    }}
 
 
 
