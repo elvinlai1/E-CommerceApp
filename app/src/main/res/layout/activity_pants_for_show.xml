@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PantsForShow"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/pants1"
+            android:src="@drawable/cargo"/>
+
+        <TextView
+            android:id="@+id/random1"
+            android:layout_width="232dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/pants1"
+            android:text="Cargo "
+            android:textColor="#F117D4"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/random"
+            android:layout_width="272dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="31dp"
+            android:layout_toEndOf="@+id/pants1"
+            android:text="Get in some durable cargos ment to last in harshest conditions"
+            android:textColor="#5D605F"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/pants2"
+            android:src="@drawable/trainers"/>
+
+        <TextView
+            android:id="@+id/random2"
+            android:layout_width="232dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/pants2"
+            android:text="Trainers "
+            android:textColor="#F117D4"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/random3"
+            android:layout_width="272dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="31dp"
+            android:layout_toEndOf="@+id/pants2"
+            android:text="Get fit today with trainers ment to last in harshest conditions"
+            android:textColor="#5D605F"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/pants3"
+            android:src="@drawable/jeans"/>
+
+        <TextView
+            android:id="@+id/random4"
+            android:layout_width="232dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/pants3"
+            android:text="Jeans "
+            android:textColor="#F117D4"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/random5"
+            android:layout_width="272dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="31dp"
+            android:layout_toEndOf="@+id/pants3"
+            android:text="Get working with our most comfortable and durable denim"
+            android:textColor="#5D605F"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/pants4"
+            android:src="@drawable/shorts"/>
+
+        <TextView
+            android:id="@+id/random7"
+            android:layout_width="232dp"
+            android:layout_height="41dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/pants4"
+            android:text="Shorts "
+            android:textColor="#F117D4"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/random6"
+            android:layout_width="272dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="31dp"
+            android:layout_toEndOf="@+id/pants4"
+            android:text="Cool down with our great air flow shorts mean for the hottest of times!"
+            android:textColor="#5D605F"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:id="@+id/pants5"
+        android:src="@drawable/khakis"/>
+
+    <TextView
+        android:id="@+id/random8"
+        android:layout_width="232dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toEndOf="@+id/pants5"
+        android:text="Khakis "
+        android:textColor="#F117D4"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/random9"
+        android:layout_width="272dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="31dp"
+        android:layout_toEndOf="@+id/pants5"
+        android:text="Get formal with our comfortable khaikis"
+        android:textColor="#5D605F"
+        android:textSize="18sp" />
+
+</RelativeLayout>
+
+</LinearLayout>
