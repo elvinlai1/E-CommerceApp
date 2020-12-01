@@ -181,10 +181,10 @@
                 android:text="Total Before Tax: " />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/orderTax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="" />
         </TableRow>
 
         <TableRow
@@ -199,10 +199,10 @@
                 android:text="Order Total: " />
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/orderTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="" />
         </TableRow>
 
     </TableLayout>

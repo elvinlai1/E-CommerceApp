@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 
 /** 1. Get Shared Preferences for:
  *          - amount of items
@@ -30,7 +33,7 @@ public class ShoppingCart extends AppCompatActivity {
     Button home;
 
     RecyclerView cartRV;
-    //cartAdapter myAdapter;
+    MyAdapter myAdapter;
     SharedPreferences preferences;
 
 
@@ -59,18 +62,67 @@ public class ShoppingCart extends AppCompatActivity {
             }
         });
 
-        //cartRecyclerView = findViewById(R.id.recyclerView);
+
+
+
+        cartRV = findViewById(R.id.recyclerView);
 
         //preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
 
-        //cartRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        cartRV.setLayoutManager(new LinearLayoutManager(this));
 
-        //getMyList();
+        getMyList();
 
 
 
     }
 
+    private void getMyList(){
+        ArrayList<Model> models = new ArrayList<>();
+
+        Model m = new Model();
+        m.setTitle("Crewneck");
+        //m.setPrice("9.99"");
+        m.setDescription("Ideal for colder weathers");
+        m.setImg(R.drawable.crew);
+        models.add(m);
+
+        m = new Model();
+        m.setTitle("Pullover");
+       //m.setPrice("12.99");
+        m.setDescription("Ideal for colder weathers");
+        m.setImg(R.drawable.hoodie);
+        models.add(m);
+
+        m = new Model();
+        m.setTitle("Jacket");
+        //m.setPrice((double) 29.99);
+        m.setDescription("Ideal for cold weathers");
+        m.setImg(R.drawable.jackets);
+        models.add(m);
+
+        m = new Model();
+        m.setTitle("Tshirts");
+        //m.setPrice((double) 4.99);
+        m.setDescription("Ideal for warmer weathers");
+        m.setImg(R.drawable.tshirt );
+        models.add(m);
+
+        m = new Model();
+        m.setTitle("Long Sleeve");
+       // m.setPrice((double) 8.99);
+        m.setDescription("Ideal for warmer weathers");
+        m.setImg(R.drawable.longsleeveshirt);
+        models.add(m);
+
+
+        cartRV.setLayoutManager(new LinearLayoutManager(this));
+
+        myAdapter = new MyAdapter(this, models);
+        cartRV.setAdapter(myAdapter);
+
+
+    }
 
 
 

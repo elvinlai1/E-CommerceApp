@@ -52,7 +52,7 @@ public class Checkout extends AppCompatActivity {
     Button btnOrder;
 
     EditText fn, ln, em, pn, pc, prov;
-    double shipCost;
+    double shipCost, tax, totalcost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +71,12 @@ public class Checkout extends AppCompatActivity {
         final RadioButton expressShipping = (RadioButton) findViewById(R.id.radBtn_expShip);
         final RadioButton regularShipping = (RadioButton) findViewById(R.id.radBtn_regShip);
 
+
+        //Set Order cost
+
+
+
+
         //Place Order Btn
         btnOrder = findViewById(R.id.btn_placeOrder);
         btnOrder.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +94,7 @@ public class Checkout extends AppCompatActivity {
                 if(expressShipping.isChecked()){
                     shipCost=19.99;
                 }
-                if(expressShipping.isChecked()){
+                if(regularShipping.isChecked()){
                     shipCost=9.99;
                 }
 
@@ -100,6 +106,8 @@ public class Checkout extends AppCompatActivity {
 
                 //Works
                 //myRef.child(getImageUUID()).setValue(transaction);
+
+
 
                 startActivity(new Intent(Checkout.this, Confirmation.class));
 
