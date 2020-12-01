@@ -39,6 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="10dp"
         android:background="#000000"
+        android:src="@drawable/shirt2"
         android:padding="2dp"
 
         tools:srcCompat="@tools:sample/avatars" />
