@@ -3,10 +3,14 @@ package com.example.e_commerceapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.UUID;
 
 /** Back Button
  * Grab Item details:
@@ -39,40 +43,51 @@ import com.google.firebase.database.FirebaseDatabase;
 public class Checkout extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
-    DatabaseReference myRef;
 
     Button btnOrder;
 
-    String fn, ln, address, postalcode, province,
+    EditText fn, ln, em, pn, pc, prov;
+
+    boolean RegShip = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Transactions");
-
-/**
-        String firstname = fn.getText().toString().trim();
-        String lastname = ln.getText().toString().trim();
-        String username = un.getText().toString().trim();
-        String password = pwd.getText().toString().trim();
-        String employeeid = eid.getText().toString().trim();
+        fn = findViewById(R.id.checkout_fn);
+        ln = findViewById(R.id.checkout_ln);
+        em = findViewById(R.id.checkout_email);
+        pn = findViewById(R.id.checkout_pn);
+        pc = findViewById(R.id.checkout_pc);
+        prov = findViewById(R.id.checkout_province);
 
 
-        rootNode = FirebaseDatabase.getInstance();
-        myRef = rootNode.getReference("user");
+        btnOrder = findViewById(R.id.btn_placeOrder);
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        signUpHelperClass helper = new signUpHelperClass(firstname, lastname, username, password, employeeid);
+                String firstName = fn.getText().toString().trim();
+                String lastName = ln.getText().toString().trim();
+                String email = em.getText().toString().trim();
+                String phoneNumber = pn.getText().toString().trim();
+                String postalCode = pc.getText().toString().trim();
+                String province = prov.getText().toString().trim();
 
+                rootNode = FirebaseDatabase.getInstance();
+                DatabaseReference myRef = rootNode.getReference("Transactions");
 
+                Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province);
 
-        myRef.child(tID).setValue(transaction);
-        myRef.setValue("Hello, World!");
+                myRef.child(getImageUUID()).setValue(transaction);
+            }
+        });
+    }
 
- **/
-
+    //Generate Unique ID
+    public static String getImageUUID() {
+        return UUID.randomUUID().toString();
     }
 
     
