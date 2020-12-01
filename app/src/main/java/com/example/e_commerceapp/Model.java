@@ -5,7 +5,8 @@ import java.util.Comparator;
 public class Model {
 
     private String title,description;
-    private int img,price;
+    private int img;
+    double price;
 
     public String getTitle() {
         return title;
@@ -30,11 +31,11 @@ public class Model {
     public void setImg(int img) {
         this.img = img;
     }
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
