@@ -5,7 +5,7 @@ import java.util.Comparator;
 public class Model {
 
     private String title,description;
-    private int img;
+    private int img,price;
 
     public String getTitle() {
         return title;
@@ -30,6 +30,13 @@ public class Model {
     public void setImg(int img) {
         this.img = img;
     }
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 
     public static final Comparator<Model> By_TITLE_ASCENDING = new Comparator<Model>() {
         @Override
@@ -43,5 +50,7 @@ public class Model {
             return o2.getTitle().compareTo(o1.getTitle());
         }
     };
+
+
 }
 

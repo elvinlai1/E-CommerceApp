@@ -18,8 +18,8 @@ public class MyHolder extends RecyclerView.ViewHolder implements View.OnClickLis
         super(itemView);
 
         this.mImaeView = itemView.findViewById(R.id.imageView);
-        this.mTitle = itemView.findViewById(R.id.textView);
-        this.mDes = itemView.findViewById(R.id.textView2);
+        this.mTitle = itemView.findViewById(R.id.titleTv);
+        this.mDes = itemView.findViewById(R.id.descriptionTV);
         itemView.setOnClickListener(this);
     }
 

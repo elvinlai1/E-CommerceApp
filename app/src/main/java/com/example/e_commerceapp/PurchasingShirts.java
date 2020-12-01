@@ -12,7 +12,7 @@ public class PurchasingShirts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchasing_shirts);
-        mainImageView = findViewById(R.id.imageShirtsView);
+        mainImageView = findViewById(R.id.shirt2);
         getData();
         setData();
     }
