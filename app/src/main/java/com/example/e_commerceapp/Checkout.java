@@ -3,6 +3,7 @@ package com.example.e_commerceapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -37,14 +38,37 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Checkout extends AppCompatActivity {
 
+    FirebaseDatabase rootNode;
+    DatabaseReference myRef;
+
+    Button btnOrder;
+
+    String fn, ln, address, postalcode,
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        DatabaseReference myRef = database.getReference("Transactions");
 
+
+        String firstname = fn.getText().toString().trim();
+        String lastname = ln.getText().toString().trim();
+        String username = un.getText().toString().trim();
+        String password = pwd.getText().toString().trim();
+        String employeeid = eid.getText().toString().trim();
+
+
+        rootNode = FirebaseDatabase.getInstance();
+        myRef = rootNode.getReference("user");
+
+        signUpHelperClass helper = new signUpHelperClass(firstname, lastname, username, password, employeeid);
+
+
+
+        myRef.child(tID).setValue(transaction);
         myRef.setValue("Hello, World!");
 
     }
