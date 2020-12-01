@@ -9,7 +9,7 @@ import android.os.Bundle;
 public class shirtPanelActivity extends AppCompatActivity {
     RecyclerView recyclerViewShirts;
     String s1[], s2[];
-    int images[] = {R.drawable.crew,R.drawable.longtshirt,R.drawable.tshirt,R.drawable.hoodie
+    int images[] = {R.drawable.crew,R.drawable.longsleeveshirt,R.drawable.tshirt,R.drawable.hoodie
     ,R.drawable.jackets,R.drawable.tanktop};
 
 
