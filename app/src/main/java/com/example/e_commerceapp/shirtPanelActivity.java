@@ -75,7 +75,6 @@ public class shirtPanelActivity extends AppCompatActivity {
         m.setImg(R.drawable.longsleeveshirt);
         models.add(m);
 
-
         String mSortSetting = preferences.getString("sort", "ascending");
         if(mSortSetting.equals("ascending")){
             Collections.sort(models, Model.By_TITLE_ASCENDING);

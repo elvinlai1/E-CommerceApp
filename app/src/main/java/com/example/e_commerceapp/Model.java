@@ -31,11 +31,12 @@ public class Model {
     public void setImg(int img) {
         this.img = img;
     }
+
     public String getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(String title) {
         this.price = price;
     }
 
