@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawer"
-    tools:openDrawer="start"
-    tools:context=".MainActivity">
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar"
-            app:title="Threads"
-            app:titleTextColor="#000000"
-            android:background="#FFFFFF"
-            />
-    </RelativeLayout>
-    <com.google.android.material.navigation.NavigationView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:id="@+id/navmenu"
-        app:menu="@menu/iconmenu"
-        app:headerLayout="@layout/navheader"
-        android:layout_gravity="start"
-        />
-
-
-<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
@@ -47,6 +17,18 @@
         android:layout_marginBottom="10sp"
         android:orientation="horizontal"
         android:padding="10sp">
+
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="422dp"
+            android:layout_height="match_parent"
+            android:hint="Search"
+            android:inputType="text"
+            android:layout_gravity="center_horizontal">
+
+        </EditText>
+
     </LinearLayout>
 
 
@@ -174,4 +156,3 @@
 
 
 </RelativeLayout>
-</androidx.drawerlayout.widget.DrawerLayout>
