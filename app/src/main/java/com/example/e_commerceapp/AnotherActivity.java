@@ -7,18 +7,41 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class AnotherActivity extends AppCompatActivity {
 
     TextView mTitletv,mDescTv;
     ImageView mImagetv;
+    int quantity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchasing_shirts);
+        final EditText id = (EditText) findViewById(R.id.quantityOfItem);
+        Button button = (Button) findViewById(R.id.addToCart);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                quantity = Integer.parseInt(id.getText().toString());
+
+
+                Bundle data = new Bundle();
+
+                data.putInt("quantity",quantity);
+                Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+                passdata.putExtra("infoAboutShirts", data);
+
+                startActivity(passdata);
+            }
+        });
 
         // in this activity we will use a back button
         ActionBar  actionbar = getSupportActionBar();
