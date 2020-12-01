@@ -6,7 +6,7 @@ public class Model {
 
     private String title,description;
     private int img;
-    double price;
+    String price;
 
     public String getTitle() {
         return title;
@@ -31,11 +31,11 @@ public class Model {
     public void setImg(int img) {
         this.img = img;
     }
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
