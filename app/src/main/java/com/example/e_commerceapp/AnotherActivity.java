@@ -42,9 +42,16 @@ public class AnotherActivity extends AppCompatActivity {
                 priceOfClothes = p.getText().toString();
                 titlename = titletxt.getText().toString();
 
-                if (clothingSize == ""); {
-                    Toast.makeText(AnotherActivity.this,"You Need To Select Size and quantity",Toast.LENGTH_SHORT).show();
+                if (clothingSize == null); {
+                    Toast.makeText(AnotherActivity.this,"You Need To Select Size",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+                if (quantity == 0){
 
+                    Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(AnotherActivity.this,"You enter quantity",Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -53,9 +60,17 @@ public class AnotherActivity extends AppCompatActivity {
                 shirtData.putString("size",clothingSize);
                 shirtData.putInt("quantity",quantity);
                 shirtData.putString("price",priceOfClothes);
-               Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+                Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
                 passdata.putExtra("infoAboutShirts", shirtData);
                 startActivity(passdata);
+
+                //Intent getdata = getIntent();
+                //Unbundle the Data
+                //Bundle data = getdata.getBundleExtra("infoAboutShirts");
+
+                //Get individual Elements using the key
+               // int id = data.getInt("quantity");
+            //    output.setText(id);
             }
         });
 

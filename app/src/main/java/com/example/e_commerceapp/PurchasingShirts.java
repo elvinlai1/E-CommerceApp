@@ -16,8 +16,6 @@ public class PurchasingShirts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchasing_shirts);
         mainImageView = findViewById(R.id.shirt2);
-        final EditText size = (EditText) findViewById(R.id.sizeOfClothes);
-        final EditText quantity = (EditText) findViewById(R.id.quantityOfItem);
         getData();
         setData();
         Button chkout = (Button) findViewById(R.id.addToCart);
