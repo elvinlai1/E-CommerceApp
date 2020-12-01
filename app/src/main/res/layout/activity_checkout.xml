@@ -181,10 +181,11 @@
                 android:text="Total Before Tax: " />
 
             <TextView
-                android:id="@+id/orderTax"
+                android:id="@+id/checkout_beforeTax"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:textSize="20dp"
+                />
         </TableRow>
 
         <TableRow
@@ -199,16 +200,17 @@
                 android:text="Order Total: " />
 
             <TextView
-                android:id="@+id/orderTotal"
+                android:id="@+id/checkout_orderTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="" />
+                android:textSize="20dp"
+                 />
         </TableRow>
 
     </TableLayout>
 
     <Button
-        android:id="@+id/btn_placeOrder"
+        android:id="@+id/checkoutBtn_placeOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"

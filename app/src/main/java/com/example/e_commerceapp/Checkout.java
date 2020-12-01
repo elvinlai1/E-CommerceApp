@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.google.firebase.database.DatabaseReference;
+
+import org.w3c.dom.Text;
 
 import java.util.UUID;
 
@@ -49,10 +52,15 @@ public class Checkout extends AppCompatActivity {
     FirebaseDatabase rootNode;
     DatabaseReference myRef;
 
-    Button btnOrder;
-
+    //Shipping Details
     EditText fn, ln, em, pn, pc, prov;
-    double shipCost, tax, totalcost;
+
+    //Bundle Data
+    String orderLine;
+    Double shipCost, checkoutTotal, after_tax;
+    Double pre_tax;
+    //Confirm
+    Button btnOrder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,13 +80,29 @@ public class Checkout extends AppCompatActivity {
         final RadioButton regularShipping = (RadioButton) findViewById(R.id.radBtn_regShip);
 
 
-        //Set Order cost
+        //Un-Bundle Data
+        Bundle checkout = new Bundle();
+        this.orderLine = checkout.getString("Order");
+        this.checkoutTotal = checkout.getDouble("Total");
 
+        //Shipping
+        if(expressShipping.isChecked()){
+            shipCost=19.99;
+        }
+        if(regularShipping.isChecked()){
+            shipCost=9.99;
+        }
 
-
+        //Show costs
+        this.pre_tax = checkoutTotal + shipCost;
+        TextView beforeTax = (TextView) findViewById(R.id.checkout_beforeTax);
+        beforeTax.setText(pre_tax.toString());
+        TextView orderTotal = (TextView) findViewById(R.id.checkout_orderTotal);
+        after_tax = pre_tax * 1.12;
+        orderTotal.setText(after_tax.toString());
 
         //Place Order Btn
-        btnOrder = findViewById(R.id.btn_placeOrder);
+        btnOrder = findViewById(R.id.checkoutBtn_placeOrder);
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,21 +115,12 @@ public class Checkout extends AppCompatActivity {
                 String province = prov.getText().toString().trim();
 
 
-                if(expressShipping.isChecked()){
-                    shipCost=19.99;
-                }
-                if(regularShipping.isChecked()){
-                    shipCost=9.99;
-                }
-
-
                 rootNode = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = rootNode.getReference("Transactions");
 
-                Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province);
+                Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province, orderLine, after_tax);
 
-                //Works
-                //myRef.child(getImageUUID()).setValue(transaction);
+                myRef.child(getImageUUID()).setValue(transaction);
 
 
 

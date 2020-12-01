@@ -34,17 +34,12 @@ public class ShoppingCart extends AppCompatActivity {
     double totalCost;
     Button checkout, home;
 
-
-
-
+    String itemName,price,size;
+    int quantity;
     RecyclerView cartRV;
     MyAdapter myAdapter;
     //SharedPreferences preferences;
-
-    String itemName;
-    String size;
-    int quantity;
-    String price;
+    Double orderTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +50,6 @@ public class ShoppingCart extends AppCompatActivity {
         checkout = findViewById(R.id.cart_Proceed);
 
         cartRV = findViewById(R.id.recyclerView);
-        //preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
         cartRV.setLayoutManager(new LinearLayoutManager(this));
 
         Intent getData = getIntent();
@@ -63,11 +57,16 @@ public class ShoppingCart extends AppCompatActivity {
         this.itemName = data.getString("itemName");
         this.size = data.getString("size");
         this.quantity = data.getInt("quantity");
-        this.price = data.getString("priceOfClothes");
+        this.price = data.getString("price");
 
 
+        //Order Total
         TextView order = (TextView) findViewById(R.id.cart_OrderTotal);
-        order.setText("hello");
+        Double priceD = Double.parseDouble(price);
+        this.orderTotal = quantity * priceD;
+        order.setText(orderTotal.toString());
+
+
 
         //getMyList();
 
@@ -75,7 +74,15 @@ public class ShoppingCart extends AppCompatActivity {
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                startActivity(new Intent(ShoppingCart.this, Checkout.class));
+                String orderDetails = "Order" + itemName + " " + size + " " + quantity;
+
+                Bundle checkout = new Bundle();
+                checkout.putString("Order", "Order" + orderDetails);
+                checkout.putDouble("Total", orderTotal);
+                Intent startCheckout = new Intent(ShoppingCart.this, Checkout.class);
+                startCheckout.putExtra("checkout", checkout);
+                startActivity(startCheckout);
+
             }
         });
 

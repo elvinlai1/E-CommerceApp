@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 public class AnotherActivity extends AppCompatActivity {
@@ -22,6 +24,7 @@ public class AnotherActivity extends AppCompatActivity {
     int quantity;
     String clothingSize;
     String priceOfClothes;
+    String titlename;
 
 
 
@@ -32,6 +35,7 @@ public class AnotherActivity extends AppCompatActivity {
         final EditText id = (EditText) findViewById(R.id.quantityOfItem);
         final EditText sizeID = (EditText) findViewById(R.id.sizeOfClothes);
         final TextView p = (TextView) findViewById(R.id.priceTV);
+        final TextView titletxt = (TextView) findViewById(R.id.title);
 
         Button button = (Button) findViewById(R.id.addToCart);
         button.setOnClickListener(new View.OnClickListener() {
@@ -39,11 +43,12 @@ public class AnotherActivity extends AppCompatActivity {
                 clothingSize = sizeID.getText().toString();
                 quantity = Integer.parseInt(id.getText().toString());
                 priceOfClothes = p.getText().toString();
+                titlename = titletxt.getText().toString();
 
 
                 Bundle shirtData = new Bundle();
 
-                shirtData.putString("itemName", String.valueOf(mTitletv));
+                shirtData.putString("itemName", titlename);
                 shirtData.putString("size",clothingSize);
                 shirtData.putInt("quantity",quantity);
                 shirtData.putString("price",priceOfClothes);
