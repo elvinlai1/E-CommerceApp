@@ -4,21 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-
-/** Grab Full Order details
- *
- *  Button back to MainActivity
- *
- */
-
-public class Confirmation extends AppCompatActivity {
+public class PantsForShow extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_confirmation);
+        setContentView(R.layout.activity_pants_for_show);
     }
-
-
-
 }

@@ -26,17 +26,16 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:layout_width="93dp"
                 android:layout_height="wrap_content"
                 android:text="First Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/checkout_fn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -50,12 +49,11 @@
                 android:text="Last Name" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/checkout_ln"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:inputType="textPersonName" />
         </TableRow>
 
         <TableRow
@@ -69,7 +67,7 @@
                 android:text="Email" />
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/checkout_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -88,7 +86,7 @@
                 android:text="Phone Number" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/checkout_pn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -106,7 +104,7 @@
                 android:text="Postal Code" />
 
             <EditText
-                android:id="@+id/editTextTextPostalAddress"
+                android:id="@+id/checkout_pc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -124,12 +122,10 @@
                 android:text="Province" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName3"
+                android:id="@+id/checkout_province"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Name" />
+                android:ems="10" />
         </TableRow>
 
     </TableLayout>
@@ -148,16 +144,16 @@
             android:text="Shipping Options" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="$19.99 Express Shipping (3-5 Business Days)" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radBtn_regShip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="$9.99 Regular Shipping (7-14 Business Days)" />
+
+        <RadioButton
+            android:id="@+id/radBtn_expShip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$19.99 Express Shipping (3-5 Business Days)" />
 
     </RadioGroup>
 
@@ -212,7 +208,7 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_placeOrder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
