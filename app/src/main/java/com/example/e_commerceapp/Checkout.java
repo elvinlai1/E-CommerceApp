@@ -43,7 +43,7 @@ public class Checkout extends AppCompatActivity {
 
     Button btnOrder;
 
-    String fn, ln, address, postalcode,
+    String fn, ln, address, postalcode, province,
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
