@@ -37,12 +37,12 @@ public class AnotherActivity extends AppCompatActivity {
                 quantity = Integer.parseInt(id.getText().toString());
                // double price  = Double.parseDouble(data1.getString("price");
 
-                Bundle data = new Bundle();
+                Bundle shirtData = new Bundle();
 
-                data.putString("itemName", String.valueOf(mTitletv));
-                data.putString("size",clothingSize);
-              data.putInt("quantity",quantity);
-              data.putDouble("price", priceOfClothes);
+                shirtData.putString("itemName", String.valueOf(mTitletv));
+                shirtData.putString("size",clothingSize);
+              shirtData.putInt("quantity",quantity);
+              shirtData.putDouble("price", priceOfClothes);
                // Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
                // passdata.putExtra("infoAboutShirts", data);
                 //  startActivity(passdata);
