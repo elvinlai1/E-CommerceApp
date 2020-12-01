@@ -28,10 +28,14 @@ public class shirtPanelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shirt_panel);
-        preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
         getMyList();
-        recyclerView = findViewById(R.id.recyclerView);
+        setContentView(R.layout.activity_shirt_panel);
+        recyclerView = findViewById(R.id.recyclerShirts);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(shirtPanelActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+        preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
+
+
     }
 
     public void getMyList (){
@@ -81,9 +85,9 @@ public class shirtPanelActivity extends AppCompatActivity {
             Collections.sort(models, Model.By_TITLE_DESCENDING);
         }
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         myAdapter = new MyAdapter (this, models);
-        recyclerView.setAdapter(myAdapter);
+
 
     }
     //create an interface class

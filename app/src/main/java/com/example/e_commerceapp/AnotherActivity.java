@@ -36,16 +36,16 @@ public class AnotherActivity extends AppCompatActivity {
                 quantity = Integer.parseInt(id.getText().toString());
                // double price  = Double.parseDouble(data1.getString("price");
 
-                Bundle data = new Bundle();
+              //  Bundle data = new Bundle();
 
-                data.putDouble( "price", priceOfClothes);
-                data.putString("itemName", String.valueOf(mTitletv));
-                data.putString("size",clothingSize);
-                data.putInt("quantity",quantity);
-                Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
-                passdata.putExtra("infoAboutShirts", data);
+             //   data.putDouble( "price", priceOfClothes);
+             //   data.putString("itemName", String.valueOf(mTitletv));
+             //   data.putString("size",clothingSize);
+             //   data.putInt("quantity",quantity);
+             //   Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+             //   passdata.putExtra("infoAboutShirts", data);
 
-                startActivity(passdata);
+             //   startActivity(passdata);
                 /*
                 Intent getdata = getIntent();
                 //Unbundle the Data

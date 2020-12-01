@@ -33,7 +33,6 @@ public class testActivity extends AppCompatActivity {
         preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
         getMyList();
         recyclerView.setAdapter(myAdapter);
-
     }
 
     private void getMyList (){

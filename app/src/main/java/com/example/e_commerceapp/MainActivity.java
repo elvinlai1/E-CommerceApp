@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.menu_shirts:
-                        startActivity(new Intent(MainActivity.this,testActivity.class));
+                        startActivity(new Intent(MainActivity.this,shirtPanelActivity.class));
                 }
                 return true;
             }
