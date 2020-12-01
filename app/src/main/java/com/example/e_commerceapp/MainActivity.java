@@ -54,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_cart:
                         startActivity(new Intent(MainActivity.this, ShoppingCart.class));
                         break;
+                    case R.id.menu_shoes:
+                        Toast.makeText(MainActivity.this,"Coming Soon.",Toast.LENGTH_SHORT);
+                        drawerLay.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.menu_hats:
+                        Toast.makeText(MainActivity.this,"Coming Soon.",Toast.LENGTH_SHORT);
+                        drawerLay.closeDrawer(GravityCompat.START);
+
+                        break;
 
 
                 }

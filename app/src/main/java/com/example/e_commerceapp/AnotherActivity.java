@@ -47,17 +47,9 @@ public class AnotherActivity extends AppCompatActivity {
                 shirtData.putString("size",clothingSize);
                 shirtData.putInt("quantity",quantity);
                 shirtData.putString("price",priceOfClothes);
-               // Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
-               // passdata.putExtra("infoAboutShirts", data);
-                //  startActivity(passdata);
-
-                //Intent getdata = getIntent();
-                //Unbundle the Data
-                //Bundle data = getdata.getBundleExtra("infoAboutShirts");
-
-                //Get individual Elements using the key
-               // int id = data.getInt("quantity");
-            //    output.setText(id);
+               Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+                passdata.putExtra("infoAboutShirts", shirtData);
+                startActivity(passdata);
             }
         });
 
