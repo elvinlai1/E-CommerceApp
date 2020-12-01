@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.menu_pants:
-                        startActivity(new Intent(MainActivity.this, pantsPanelActivity.class));
+                        startActivity(new Intent(MainActivity.this, PantsForShow.class));
                         break;
                     case R.id.menu_cart:
                         startActivity(new Intent(MainActivity.this, ShoppingCart.class));

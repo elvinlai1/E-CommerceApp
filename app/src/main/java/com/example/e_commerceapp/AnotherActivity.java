@@ -41,8 +41,8 @@ public class AnotherActivity extends AppCompatActivity {
 
                 shirtData.putString("itemName", String.valueOf(mTitletv));
                 shirtData.putString("size",clothingSize);
-              shirtData.putInt("quantity",quantity);
-              shirtData.putDouble("price", priceOfClothes);
+                shirtData.putInt("quantity",quantity);
+                shirtData.putDouble("price", priceOfClothes);
                // Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
                // passdata.putExtra("infoAboutShirts", data);
                 //  startActivity(passdata);
