@@ -42,9 +42,14 @@ public class MainActivity extends AppCompatActivity {
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
+                switch (menuItem.getItemId()) {
                     case R.id.menu_shirts:
-                        startActivity(new Intent(MainActivity.this,shirtPanelActivity.class));
+                        startActivity(new Intent(MainActivity.this, shirtPanelActivity.class));
+                        break;
+
+                    case R.id.menu_pants:
+                        startActivity(new Intent(MainActivity.this, pantsPanelActivity.class));
+
                 }
                 return true;
             }

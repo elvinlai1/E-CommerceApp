@@ -34,26 +34,26 @@ public class AnotherActivity extends AppCompatActivity {
             public void onClick(View v) {
                 clothingSize = sizeID.getText().toString();
                 quantity = Integer.parseInt(id.getText().toString());
-               // double price  = Double.parseDouble(data1.getString("price");
+              //  double price  = Double.parseDouble(data1.getString("price");
 
               //  Bundle data = new Bundle();
 
-             //   data.putDouble( "price", priceOfClothes);
+              //  data.putDouble( "price", priceOfClothes);
              //   data.putString("itemName", String.valueOf(mTitletv));
              //   data.putString("size",clothingSize);
-             //   data.putInt("quantity",quantity);
-             //   Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
-             //   passdata.putExtra("infoAboutShirts", data);
+             // data.putInt("quantity",quantity);
+              //  Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+              //  passdata.putExtra("infoAboutShirts", data);
 
-             //   startActivity(passdata);
-                /*
+              //  startActivity(passdata);
+
                 Intent getdata = getIntent();
                 //Unbundle the Data
                 Bundle data = getdata.getBundleExtra("infoAboutShirts");
 
                 //Get individual Elements using the key
-                int id = data.getInt("quantity");
-                output.setText(id);*/
+              //  int id = data.getInt("quantity");
+               // output.setText(id);*/
             }
         });
 
@@ -75,7 +75,7 @@ public class AnotherActivity extends AppCompatActivity {
 
         Bitmap bitmap = BitmapFactory.decodeByteArray(mBytes, 0, mBytes.length);
 
-        actionbar.setTitle(mTitle); // which title we get from prev activity that we will set in action bar
+//        actionbar.setTitle(mTitle); // which title we get from prev activity that we will set in action bar
 
         //now set our data in our view, which we get in our previous activity
         mTitletv.setText(mTitle);

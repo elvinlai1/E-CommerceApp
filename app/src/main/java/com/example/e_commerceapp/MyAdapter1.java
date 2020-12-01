@@ -28,7 +28,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
+        View view = inflater.inflate(R.layout.row, parent, false);
         return new MyViewHolder(view);
 
     }
@@ -64,7 +64,7 @@ public class MyAdapter1 extends RecyclerView.Adapter<MyAdapter1.MyViewHolder> {
             mytext1 = itemView.findViewById(R.id.descriptionTV);
             myText2 = itemView.findViewById(R.id.titleTv);
             myImage = itemView.findViewById(R.id.imageView);
-            mainLayout = itemView.findViewById(R.id.mainLayout);
+            mainLayout = itemView.findViewById(R.id.mainLayout2);
 
         }
     }
