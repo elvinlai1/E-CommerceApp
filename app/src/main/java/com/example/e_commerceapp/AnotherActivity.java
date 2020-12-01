@@ -12,8 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,8 +24,6 @@ public class AnotherActivity extends AppCompatActivity {
     String clothingSize;
     String priceOfClothes;
     String titlename;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +42,18 @@ public class AnotherActivity extends AppCompatActivity {
                 priceOfClothes = p.getText().toString();
                 titlename = titletxt.getText().toString();
 
+                if (clothingSize == ""); {
+                    Toast.makeText(AnotherActivity.this,"You Need To Select Size and quantity",Toast.LENGTH_SHORT).show();
+
+                }
+
 
                 Bundle shirtData = new Bundle();
-
                 shirtData.putString("itemName", titlename);
                 shirtData.putString("size",clothingSize);
                 shirtData.putInt("quantity",quantity);
                 shirtData.putString("price",priceOfClothes);
-                Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+               Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
                 passdata.putExtra("infoAboutShirts", shirtData);
                 startActivity(passdata);
             }
