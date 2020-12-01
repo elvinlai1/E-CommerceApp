@@ -53,4 +53,5 @@
         android:icon="@drawable/ic_shoes"
         android:title="Shoes"
         />
+
 </menu>
