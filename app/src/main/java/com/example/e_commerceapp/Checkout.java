@@ -52,7 +52,7 @@ public class Checkout extends AppCompatActivity {
     Button btnOrder;
 
     EditText fn, ln, em, pn, pc, prov;
-    boolean RegShip = true;
+    double shipCost;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,12 @@ public class Checkout extends AppCompatActivity {
                 String province = prov.getText().toString().trim();
 
 
-
+                if(expressShipping.isChecked()){
+                    shipCost=19.99;
+                }
+                if(expressShipping.isChecked()){
+                    shipCost=9.99;
+                }
 
 
                 rootNode = FirebaseDatabase.getInstance();
@@ -97,7 +102,6 @@ public class Checkout extends AppCompatActivity {
                 //myRef.child(getImageUUID()).setValue(transaction);
 
                 startActivity(new Intent(Checkout.this, Confirmation.class));
-
 
             }
         });
