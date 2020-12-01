@@ -28,13 +28,12 @@ public class shirtPanelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getMyList();
         setContentView(R.layout.activity_shirt_panel);
-        recyclerView = findViewById(R.id.recyclerShirts);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(shirtPanelActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
         preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
-
+        getMyList();
+        recyclerView = findViewById(R.id.recyclerShirts);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myAdapter);
 
     }
 
