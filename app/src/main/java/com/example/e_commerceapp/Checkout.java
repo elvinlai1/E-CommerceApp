@@ -43,7 +43,7 @@ public class Checkout extends AppCompatActivity {
 
     Button btnOrder;
 
-    String fn, ln, address, postalcode,
+    String fn, ln, address, postalcode, province,
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +53,7 @@ public class Checkout extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Transactions");
 
-
+/**
         String firstname = fn.getText().toString().trim();
         String lastname = ln.getText().toString().trim();
         String username = un.getText().toString().trim();
@@ -70,6 +70,8 @@ public class Checkout extends AppCompatActivity {
 
         myRef.child(tID).setValue(transaction);
         myRef.setValue("Hello, World!");
+
+ **/
 
     }
 
