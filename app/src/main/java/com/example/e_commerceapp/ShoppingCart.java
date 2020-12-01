@@ -19,7 +19,7 @@ import android.os.Bundle;
  **/
 
 public class ShoppingCart extends AppCompatActivity {
-
+/**
     //Dummy Data
     int amt;
     double totalCost;
@@ -42,6 +42,7 @@ public class ShoppingCart extends AppCompatActivity {
 
         //getMyList();
 
+**/
 
     }
 
