@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/blackShirtImg"
+        android:id="@+id/shirt2"
         android:layout_width="241dp"
         android:layout_height="240dp"
         android:layout_gravity="center_horizontal"

@@ -7,37 +7,35 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonBlack;
-    Button buttonStripped;
-    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_page);
 
-        buttonBlack = findViewById(R.id.blackShirtBtn);
-        buttonBlack.setOnClickListener(new View.OnClickListener() {
+        Button btn = (Button) findViewById(R.id.blackshirtbtn);
+
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainPageBlackShirt.class);
-                intent.putExtra("shirt2", R.drawable.shirt2);
-                startActivity(intent);
+            public void onClick(View view) {
+
+                startActivity(new Intent(MainActivity.this, MainPageBlackShirt.class));
 
             }
         });
-        buttonStripped = findViewById(R.id.strippedShirtBtn);
-        buttonStripped.setOnClickListener(new View.OnClickListener() {
+
+        Button btn1 = (Button) findViewById(R.id.strippedShirtBtn);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent1 = new Intent(MainActivity.this, MainPageStrippedShirt.class);
-                intent1.putExtra("shirt3", R.drawable.shirtmale1);
-                startActivity(intent1);
+           public void onClick(View view) {
+
+               startActivity(new Intent(MainActivity.this, MainPageStrippedShirt.class));
+
             }
-
-
         });
     }}
 
