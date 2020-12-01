@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
     Button buttonBlack;
     Button buttonStripped;
 
-    @SuppressLint("WrongViewCast")
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+   // @SuppressLint("WrongViewCast")
+   // @Override
+   /* protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-        });
+        });*/
         {
 
             buttonBlack = findViewById(R.id.blackshirtbtn);
@@ -78,6 +78,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-}
+
 
 
