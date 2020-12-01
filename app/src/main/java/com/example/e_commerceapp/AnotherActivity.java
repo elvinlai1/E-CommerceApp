@@ -20,26 +20,40 @@ public class AnotherActivity extends AppCompatActivity {
     TextView mTitletv,mDescTv;
     ImageView mImagetv;
     int quantity;
-
+    String clothingSize;
+    double priceOfClothes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purchasing_shirts);
         final EditText id = (EditText) findViewById(R.id.quantityOfItem);
+        final EditText sizeID = (EditText) findViewById(R.id.sizeOfClothes);
         Button button = (Button) findViewById(R.id.addToCart);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                clothingSize = sizeID.getText().toString();
                 quantity = Integer.parseInt(id.getText().toString());
+               // double price  = Double.parseDouble(data1.getString("price");
 
+              //  Bundle data = new Bundle();
 
-                Bundle data = new Bundle();
+             //   data.putDouble( "price", priceOfClothes);
+             //   data.putString("itemName", String.valueOf(mTitletv));
+             //   data.putString("size",clothingSize);
+             //   data.putInt("quantity",quantity);
+             //   Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
+             //   passdata.putExtra("infoAboutShirts", data);
 
-                data.putInt("quantity",quantity);
-                Intent passdata = new Intent(AnotherActivity.this, ShoppingCart.class);
-                passdata.putExtra("infoAboutShirts", data);
+             //   startActivity(passdata);
+                /*
+                Intent getdata = getIntent();
+                //Unbundle the Data
+                Bundle data = getdata.getBundleExtra("infoAboutShirts");
 
-                startActivity(passdata);
+                //Get individual Elements using the key
+                int id = data.getInt("quantity");
+                output.setText(id);*/
             }
         });
 

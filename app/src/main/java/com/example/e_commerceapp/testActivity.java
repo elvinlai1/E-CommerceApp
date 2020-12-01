@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,7 +18,7 @@ import android.widget.SearchView;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class shirtPanelActivity extends AppCompatActivity {
+public class testActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     MyAdapter   myAdapter;
@@ -28,50 +27,48 @@ public class shirtPanelActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getMyList();
         setContentView(R.layout.activity_shirt_panel);
-        recyclerView = findViewById(R.id.recyclerShirts);
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(shirtPanelActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = findViewById(R.id.recyclerView);
         preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
-
-
+        getMyList();
+        recyclerView.setAdapter(myAdapter);
     }
 
-    public void getMyList (){
+    private void getMyList (){
         ArrayList<Model> models = new ArrayList<>();
 
         Model m = new Model();
         m.setTitle("Crewneck");
-        m.setPrice((double) 9.99);
+        m.setPrice((int) 9.99);
         m.setDescription("Ideal for colder weathers");
         m.setImg(R.drawable.crew);
         models.add(m);
 
         m = new Model();
         m.setTitle("Pullover");
-        m.setPrice((double) 12.99);
+        m.setPrice((int) 12.99);
         m.setDescription("Ideal for colder weathers");
         m.setImg(R.drawable.hoodie);
         models.add(m);
 
         m = new Model();
         m.setTitle("Jacket");
-        m.setPrice((double) 29.99);
+        m.setPrice((int) 29.99);
         m.setDescription("Ideal for cold weathers");
         m.setImg(R.drawable.jackets);
         models.add(m);
 
         m = new Model();
         m.setTitle("Tshirts");
-        m.setPrice((double) 4.99);
+        m.setPrice((int) 4.99);
         m.setDescription("Ideal for warmer weathers");
         m.setImg(R.drawable.tshirt );
         models.add(m);
 
         m = new Model();
         m.setTitle("Long Sleeve");
-        m.setPrice((double) 8.99);
+        m.setPrice((int) 8.99);
         m.setDescription("Ideal for warmer weathers");
         m.setImg(R.drawable.longsleeveshirt);
         models.add(m);
@@ -84,10 +81,9 @@ public class shirtPanelActivity extends AppCompatActivity {
         else if (mSortSetting.equals("descending")){
             Collections.sort(models, Model.By_TITLE_DESCENDING);
         }
-
-
+    //    recyclerView.setLayoutManager(new LinearLayoutManager(this));
         myAdapter = new MyAdapter (this, models);
-
+      //  recyclerView.setAdapter(myAdapter);
 
     }
     //create an interface class
@@ -159,5 +155,4 @@ public class shirtPanelActivity extends AppCompatActivity {
         });
         builder.create().show();
     }
-
 }
