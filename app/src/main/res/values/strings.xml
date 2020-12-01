@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">E-CommerceApp</string>
 
+    <string name="open">open</string>
+    <string name="close">close</string>
 
         <string-array name="sizeOfClothes">
             <item>Small</item>
@@ -27,6 +29,41 @@
             <item>3</item>
             <item>4</item>
         </string-array>
+
+    <string-array name="list_shirts">
+        <item>Crewneck</item>
+        <item>Long sleeve</item>
+        <item>T-Shirts</item>
+        <item>Hoodie</item>
+        <item>Jackets</item>
+        <item>Tank tops</item>
+    </string-array>
+
+    <string-array name="list_shirts_description">
+        <item>Perfect for Fall season</item>
+        <item>Find the best fits</item>
+        <item>Ideal for warmer weathers</item>
+        <item>Ideal for colder weathers</item>
+        <item>Ideal for colder weathers</item>
+        <item>Ideal for warmer weathers</item>
+    </string-array>
+
+    <string-array name="list_pants">
+        <item>Jeans</item>
+        <item>Khakis</item>
+        <item>Trainers</item>
+        <item>Shorts</item>
+        <item>Cargo</item>
+
+    </string-array>
+    <string-array name="list_pants_description">
+        <item>High quality denim</item>
+        <item>Perfect for formal events</item>
+        <item>Perfect for staying fit</item>
+        <item>Ideal for warmer weathers</item>
+        <item>High durability and plenty of storage</item>
+
+    </string-array>
 
     </resources>
 
