@@ -10,6 +10,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 
@@ -48,6 +51,7 @@ public class ShoppingCart extends AppCompatActivity {
         cartRV = findViewById(R.id.recyclerView);
         cartRV.setLayoutManager(new LinearLayoutManager(this));
 
+        //Un-bundle data
         Intent getData = getIntent();
         Bundle data = getData.getBundleExtra("infoAboutShirts");
         this.itemName = data.getString("itemName");
@@ -55,16 +59,13 @@ public class ShoppingCart extends AppCompatActivity {
         this.quantity = data.getInt("quantity");
         this.price = data.getString("price");
 
-
         //Order Total
         TextView order = (TextView) findViewById(R.id.cart_OrderTotal);
         Double priceD = Double.parseDouble(price);
         this.orderTotal = quantity * priceD;
-        order.setText(orderTotal.toString());
+        order.setText("Order Total: " + orderTotal.toString());
 
-
-        //getMyList();
-
+        getMyList();
 
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,6 +97,7 @@ public class ShoppingCart extends AppCompatActivity {
         Model m = new Model();
         m.setTitle(itemName);
         m.setPrice(price);
+        m.setDescription("Size: " + size + "     " + "Quantity: " +  String.valueOf(quantity));
         m.setImg(R.drawable.crew);
         models.add(m);
 

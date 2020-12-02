@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_margin="20dp"
     tools:context=".ShoppingCart">
 
 
@@ -40,11 +41,11 @@
 
     <TextView
         android:id="@+id/cart_OrderTotal"
-        android:layout_width="261dp"
-        android:layout_height="116dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-
-        android:text="TextView"
-        android:textSize="40dp" />
+        android:paddingTop="20dp"
+        android:text="Order Total"
+        android:textSize="30dp" />
 
 </LinearLayout>
