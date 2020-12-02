@@ -59,6 +59,8 @@ public class Checkout extends AppCompatActivity {
     //Confirm
     Button btnOrder;
 
+    Boolean confirm = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,22 +85,22 @@ public class Checkout extends AppCompatActivity {
         this.checkoutTotal = checkout.getDouble("Total");
 
         //Shipping
-        if(expressShipping.isChecked()){
-            this.shipCost=19.99;
-        }
         if(regularShipping.isChecked()){
             this.shipCost=9.99;
         }
+        if(expressShipping.isChecked()){
+            this.shipCost=19.99;
+            pre_tax = checkoutTotal + shipCost;
+        }
 
+            //Show costs
+            pre_tax = checkoutTotal + shipCost;
+            TextView beforeTax = (TextView) findViewById(R.id.checkout_beforeTax);
+            beforeTax.setText(pre_tax.toString());
 
-        //Show costs
-        pre_tax = checkoutTotal + shipCost;
-        TextView beforeTax = (TextView) findViewById(R.id.checkout_beforeTax);
-        beforeTax.setText(pre_tax.toString());
-
-        after_tax = checkoutTotal + shipCost *1.12;
-        TextView orderTotal = (TextView) findViewById(R.id.checkout_orderTotal);
-        orderTotal.setText(after_tax.toString());
+            after_tax = checkoutTotal + shipCost * 1.12;
+            TextView orderTotal = (TextView) findViewById(R.id.checkout_orderTotal);
+            orderTotal.setText(after_tax.toString());
 
 
 
