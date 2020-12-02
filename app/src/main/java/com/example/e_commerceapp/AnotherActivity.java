@@ -47,12 +47,13 @@ public class AnotherActivity extends AppCompatActivity {
                     Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
                     startActivity(intent);
                 }
-                if (quantity == 0){
+                if (quantity == 0 ){
 
                     Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
                     startActivity(intent);
                     Toast.makeText(AnotherActivity.this,"You enter quantity",Toast.LENGTH_SHORT).show();
                 }
+
 
 
                 Bundle shirtData = new Bundle();
