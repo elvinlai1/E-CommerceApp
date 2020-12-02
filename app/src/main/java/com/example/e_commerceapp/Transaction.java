@@ -4,21 +4,18 @@ import android.widget.EditText;
 
 public class Transaction {
 
-    String fn;
-    String ln;
-    String em;
-    String pn;
-    String pc;
-    String prov;
+    String fn, ln, em, pn, pc, prov, order;
+    Double total;
 
-
-    public Transaction(String fn, String ln, String em, String pn, String pc, String prov) {
+    public Transaction(String fn, String ln, String em, String pn, String pc, String prov, String o, Double t) {
         this.fn = fn;
         this.ln = ln;
         this.em = em;
         this.pn = pn;
         this.pc = pc;
         this.prov = prov;
+        this.order = o;
+        this.total = t;
     }
 
     public String getFn() {
@@ -67,6 +64,22 @@ public class Transaction {
 
     public void setProv(String prov) {
         this.prov = prov;
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
 

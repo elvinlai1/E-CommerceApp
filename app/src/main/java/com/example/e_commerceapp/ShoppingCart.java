@@ -10,6 +10,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,29 +32,57 @@ public class ShoppingCart extends AppCompatActivity {
     //Dummy Data
     int amt;
     double totalCost;
-    Button checkout;
-    Button home;
+    Button checkout, home;
 
+    String itemName,price,size;
+    int quantity;
     RecyclerView cartRV;
     MyAdapter myAdapter;
-    SharedPreferences preferences;
-
-
-
+    //SharedPreferences preferences;
+    Double orderTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
 
-
         home = findViewById(R.id.cart_Home);
         checkout = findViewById(R.id.cart_Proceed);
+
+        cartRV = findViewById(R.id.recyclerView);
+        cartRV.setLayoutManager(new LinearLayoutManager(this));
+
+        Intent getData = getIntent();
+        Bundle data = getData.getBundleExtra("infoAboutShirts");
+        this.itemName = data.getString("itemName");
+        this.size = data.getString("size");
+        this.quantity = data.getInt("quantity");
+        this.price = data.getString("price");
+
+
+        //Order Total
+        TextView order = (TextView) findViewById(R.id.cart_OrderTotal);
+        Double priceD = Double.parseDouble(price);
+        this.orderTotal = quantity * priceD;
+        order.setText(orderTotal.toString());
+
+
+
+        //getMyList();
+
 
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                startActivity(new Intent(ShoppingCart.this, Checkout.class));
+                String orderDetails = "Order" + itemName + " " + size + " " + quantity;
+
+                Bundle checkout = new Bundle();
+                checkout.putString("Order", "Order" + orderDetails);
+                checkout.putDouble("Total", orderTotal);
+                Intent startCheckout = new Intent(ShoppingCart.this, Checkout.class);
+                startCheckout.putExtra("checkout", checkout);
+                startActivity(startCheckout);
+
             }
         });
 
@@ -62,65 +93,20 @@ public class ShoppingCart extends AppCompatActivity {
             }
         });
 
-
-
-
-        cartRV = findViewById(R.id.recyclerView);
-
-        //preferences = this.getSharedPreferences("My_Pref", MODE_PRIVATE);
-
-        cartRV.setLayoutManager(new LinearLayoutManager(this));
-
-        getMyList();
-
-
-
     }
 
     private void getMyList(){
         ArrayList<Model> models = new ArrayList<>();
 
         Model m = new Model();
-        m.setTitle("Crewneck");
-        //m.setPrice("9.99"");
-        m.setDescription("Ideal for colder weathers");
+        m.setTitle(itemName);
+        m.setPrice(price);
         m.setImg(R.drawable.crew);
         models.add(m);
 
-        m = new Model();
-        m.setTitle("Pullover");
-       //m.setPrice("12.99");
-        m.setDescription("Ideal for colder weathers");
-        m.setImg(R.drawable.hoodie);
-        models.add(m);
-
-        m = new Model();
-        m.setTitle("Jacket");
-        //m.setPrice((double) 29.99);
-        m.setDescription("Ideal for cold weathers");
-        m.setImg(R.drawable.jackets);
-        models.add(m);
-
-        m = new Model();
-        m.setTitle("Tshirts");
-        //m.setPrice((double) 4.99);
-        m.setDescription("Ideal for warmer weathers");
-        m.setImg(R.drawable.tshirt );
-        models.add(m);
-
-        m = new Model();
-        m.setTitle("Long Sleeve");
-       // m.setPrice((double) 8.99);
-        m.setDescription("Ideal for warmer weathers");
-        m.setImg(R.drawable.longsleeveshirt);
-        models.add(m);
-
-
         cartRV.setLayoutManager(new LinearLayoutManager(this));
-
         myAdapter = new MyAdapter(this, models);
         cartRV.setAdapter(myAdapter);
-
 
     }
 
