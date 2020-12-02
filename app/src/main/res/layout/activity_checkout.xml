@@ -147,6 +147,7 @@
             android:id="@+id/radBtn_regShip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="$9.99 Regular Shipping (7-14 Business Days)" />
 
         <RadioButton
@@ -182,10 +183,9 @@
 
             <TextView
                 android:id="@+id/checkout_beforeTax"
-                android:layout_width="match_parent"
+                android:layout_width="86dp"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                />
+                android:textSize="15dp" />
         </TableRow>
 
         <TableRow

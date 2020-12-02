@@ -9,13 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import com.google.firebase.database.DatabaseReference;
-
-import org.w3c.dom.Text;
 
 import java.util.UUID;
 
@@ -56,7 +53,7 @@ public class Checkout extends AppCompatActivity {
     EditText fn, ln, em, pn, pc, prov;
 
     //Bundle Data
-    String orderLine, stringAfter_tax;
+    String orderLine;
     Double shipCost, after_tax;
     Double pre_tax, checkoutTotal;
     //Confirm
@@ -87,60 +84,53 @@ public class Checkout extends AppCompatActivity {
 
         //Shipping
         if(expressShipping.isChecked()){
-            shipCost=19.99;
+            this.shipCost=19.99;
         }
         if(regularShipping.isChecked()){
-            shipCost=9.99;
+            this.shipCost=9.99;
         }
 
-/**
-        pre_tax = checkoutTotal + shipCost;
-        after_tax = pre_tax * 1.12;
 
         //Show costs
+        pre_tax = checkoutTotal + shipCost;
         TextView beforeTax = (TextView) findViewById(R.id.checkout_beforeTax);
         beforeTax.setText(pre_tax.toString());
 
+        after_tax = checkoutTotal + shipCost *1.12;
         TextView orderTotal = (TextView) findViewById(R.id.checkout_orderTotal);
         orderTotal.setText(after_tax.toString());
-        **/
+
+
+
         //Place Order Btn
         btnOrder = findViewById(R.id.checkoutBtn_placeOrder);
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String firstName = fn.getText().toString().trim();
-                String lastName = ln.getText().toString().trim();
-                String email = em.getText().toString().trim();
-                String phoneNumber = pn.getText().toString().trim();
-                String postalCode = pc.getText().toString().trim();
-                String province = prov.getText().toString().trim();
+                if (fn == null && ln == null && em == null && pn == null && pc == null && prov == null){
+                    Toast.makeText(Checkout.this, "Blank line",Toast.LENGTH_SHORT).show();
+                } else {
 
-                //Shipping
-                if(expressShipping.isChecked()){
-                    shipCost=19.99;
+                    String firstName = fn.getText().toString().trim();
+                    String lastName = ln.getText().toString().trim();
+                    String email = em.getText().toString().trim();
+                    String phoneNumber = pn.getText().toString().trim();
+                    String postalCode = pc.getText().toString().trim();
+                    String province = prov.getText().toString().trim();
+
+                    String transactionCost = after_tax.toString();
+
+
+                    rootNode = FirebaseDatabase.getInstance();
+                    DatabaseReference myRef = rootNode.getReference("Transactions");
+
+                    Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province, orderLine, transactionCost);
+
+                    myRef.child(getImageUUID()).setValue(transaction);
+
+                    startActivity(new Intent(Checkout.this, Confirmation.class));
                 }
-                if(regularShipping.isChecked()){
-                    shipCost=9.99;
-                }
-
-                pre_tax = checkoutTotal + shipCost;
-                after_tax = pre_tax * 1.12;
-
-                String transactionCost = after_tax.toString();
-
-
-                rootNode = FirebaseDatabase.getInstance();
-                DatabaseReference myRef = rootNode.getReference("Transactions");
-
-                Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province, orderLine, transactionCost);
-
-                myRef.child(getImageUUID()).setValue(transaction);
-
-
-                startActivity(new Intent(Checkout.this, Confirmation.class));
-
             }
         });
     }
@@ -149,6 +139,5 @@ public class Checkout extends AppCompatActivity {
     public static String getImageUUID() {
         return UUID.randomUUID().toString();
     }
-
 
 }
