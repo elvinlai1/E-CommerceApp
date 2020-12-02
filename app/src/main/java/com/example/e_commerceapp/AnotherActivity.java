@@ -42,11 +42,11 @@ public class AnotherActivity extends AppCompatActivity {
                 priceOfClothes = p.getText().toString();
                 titlename = titletxt.getText().toString();
 
-                if (clothingSize == null); {
-                    Toast.makeText(AnotherActivity.this,"You Need To Select Size",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
-                    startActivity(intent);
-                }
+               // if (clothingSize == ""); {
+                 //   Toast.makeText(AnotherActivity.this,"You Need To Select Size",Toast.LENGTH_SHORT).show();
+                  //  Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
+                  //  startActivity(intent);
+               // }
                 if (quantity == 0 ){
 
                     Intent intent = new Intent(AnotherActivity.this, MainActivity.class);
