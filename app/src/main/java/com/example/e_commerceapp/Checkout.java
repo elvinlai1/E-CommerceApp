@@ -57,8 +57,8 @@ public class Checkout extends AppCompatActivity {
 
     //Bundle Data
     String orderLine;
-    Double shipCost, checkoutTotal, after_tax;
-    Double pre_tax;
+    Double shipCost, after_tax;
+    Double pre_tax, checkoutTotal;
     //Confirm
     Button btnOrder;
 
@@ -79,28 +79,22 @@ public class Checkout extends AppCompatActivity {
         final RadioButton expressShipping = (RadioButton) findViewById(R.id.radBtn_expShip);
         final RadioButton regularShipping = (RadioButton) findViewById(R.id.radBtn_regShip);
 
-
         //Un-Bundle Data
-        Bundle checkout = new Bundle();
+        Intent getData = getIntent();
+        Bundle checkout = getData.getBundleExtra("checkout");
         this.orderLine = checkout.getString("Order");
         this.checkoutTotal = checkout.getDouble("Total");
 
-        //Shipping
-        if(expressShipping.isChecked()){
-            shipCost=19.99;
-        }
-        if(regularShipping.isChecked()){
-            shipCost=9.99;
-        }
-
-        //Show costs
         this.pre_tax = checkoutTotal + shipCost;
+        this.after_tax = pre_tax * 1.12;
+
+       /** //Show costs
         TextView beforeTax = (TextView) findViewById(R.id.checkout_beforeTax);
         beforeTax.setText(pre_tax.toString());
-        TextView orderTotal = (TextView) findViewById(R.id.checkout_orderTotal);
-        after_tax = pre_tax * 1.12;
-        orderTotal.setText(after_tax.toString());
 
+        TextView orderTotal = (TextView) findViewById(R.id.checkout_orderTotal);
+        orderTotal.setText(after_tax.toString());
+        **/
         //Place Order Btn
         btnOrder = findViewById(R.id.checkoutBtn_placeOrder);
         btnOrder.setOnClickListener(new View.OnClickListener() {
@@ -115,13 +109,20 @@ public class Checkout extends AppCompatActivity {
                 String province = prov.getText().toString().trim();
 
 
+                //Shipping
+                if(expressShipping.isChecked()){
+                    shipCost=19.99;
+                }
+                if(regularShipping.isChecked()){
+                    shipCost=9.99;
+                }
+
                 rootNode = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = rootNode.getReference("Transactions");
 
                 Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province, orderLine, after_tax);
 
                 myRef.child(getImageUUID()).setValue(transaction);
-
 
 
                 startActivity(new Intent(Checkout.this, Confirmation.class));

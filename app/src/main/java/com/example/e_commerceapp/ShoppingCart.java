@@ -2,7 +2,6 @@ package com.example.e_commerceapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -11,11 +10,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.Collections;
+
 
 
 /** 1. Get Shared Preferences for:
@@ -67,17 +63,16 @@ public class ShoppingCart extends AppCompatActivity {
         order.setText(orderTotal.toString());
 
 
-
         //getMyList();
 
 
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                String orderDetails = "Order" + itemName + " " + size + " " + quantity;
+                String orderDetails = "Order " ;
 
                 Bundle checkout = new Bundle();
-                checkout.putString("Order", "Order" + orderDetails);
+                checkout.putString("Order", orderDetails);
                 checkout.putDouble("Total", orderTotal);
                 Intent startCheckout = new Intent(ShoppingCart.this, Checkout.class);
                 startCheckout.putExtra("checkout", checkout);
