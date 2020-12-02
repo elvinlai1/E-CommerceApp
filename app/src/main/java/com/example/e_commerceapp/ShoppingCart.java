@@ -69,7 +69,7 @@ public class ShoppingCart extends AppCompatActivity {
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                String orderDetails = "Order " ;
+                String orderDetails = "Order " + itemName + " " + size ;
 
                 Bundle checkout = new Bundle();
                 checkout.putString("Order", orderDetails);

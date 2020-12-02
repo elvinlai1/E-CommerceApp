@@ -56,7 +56,7 @@ public class Checkout extends AppCompatActivity {
     EditText fn, ln, em, pn, pc, prov;
 
     //Bundle Data
-    String orderLine;
+    String orderLine, stringAfter_tax;
     Double shipCost, after_tax;
     Double pre_tax, checkoutTotal;
     //Confirm
@@ -85,10 +85,19 @@ public class Checkout extends AppCompatActivity {
         this.orderLine = checkout.getString("Order");
         this.checkoutTotal = checkout.getDouble("Total");
 
-        this.pre_tax = checkoutTotal + shipCost;
-        this.after_tax = pre_tax * 1.12;
+        //Shipping
+        if(expressShipping.isChecked()){
+            shipCost=19.99;
+        }
+        if(regularShipping.isChecked()){
+            shipCost=9.99;
+        }
 
-       /** //Show costs
+/**
+        pre_tax = checkoutTotal + shipCost;
+        after_tax = pre_tax * 1.12;
+
+        //Show costs
         TextView beforeTax = (TextView) findViewById(R.id.checkout_beforeTax);
         beforeTax.setText(pre_tax.toString());
 
@@ -108,7 +117,6 @@ public class Checkout extends AppCompatActivity {
                 String postalCode = pc.getText().toString().trim();
                 String province = prov.getText().toString().trim();
 
-
                 //Shipping
                 if(expressShipping.isChecked()){
                     shipCost=19.99;
@@ -117,10 +125,16 @@ public class Checkout extends AppCompatActivity {
                     shipCost=9.99;
                 }
 
+                pre_tax = checkoutTotal + shipCost;
+                after_tax = pre_tax * 1.12;
+
+                String transactionCost = after_tax.toString();
+
+
                 rootNode = FirebaseDatabase.getInstance();
                 DatabaseReference myRef = rootNode.getReference("Transactions");
 
-                Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province, orderLine, after_tax);
+                Transaction transaction = new Transaction(firstName, lastName, email, phoneNumber, postalCode, province, orderLine, transactionCost);
 
                 myRef.child(getImageUUID()).setValue(transaction);
 
